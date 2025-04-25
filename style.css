@@ -1,0 +1,197 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #fce4ec;
+    color: #C3057F;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1, p {
+    color: #C3057F;
+}
+
+/* Carrossel */
+.carrossel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.carrossel-container img {
+    width: auto;
+    height: 400px;
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    object-fit: contain;
+}
+
+.carrossel-container button {
+    background-color: #C3057F;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.carrossel-container button:hover {
+    background-color: #ad1457;
+}
+
+/* Legenda */
+.legenda {
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 10px;
+    color: #555;
+    white-space: pre-line;
+}
+
+/* Linha divisória */
+hr {
+    border: none;
+    height: 2px;
+    background-color: #880e4f;
+    margin: 25px auto;
+    width: 40%;
+}
+
+/* Nova linha divisória */
+.linha-secundaria {
+    border: none;
+    height: 2px;
+    background-color: #880e4f;
+    margin: 25px auto;
+    width: 40%;
+}
+
+/* Contador */
+#contador-container {
+    margin-top: 20px;
+}
+
+.contador-texto {
+    font-size: 16px;
+    margin: 3px 0;
+    line-height: 1.0;
+}
+
+#contador {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 3px 0;
+    line-height: 1.2;
+}
+
+.contador-legenda {
+    font-size: 14px;
+    margin: 3px 0;
+    line-height: 1.2;
+    font-style: italic;
+}
+
+/* Estilo do botão de tocar música */
+#playMusic {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #C3057F;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#playMusic:hover {
+    background-color: #ad1457;
+}
+
+.mensagem-extra {
+    font-size: 18px;
+    font-weight: bold;
+    color: #C3057F;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.historia {
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.convite-observacao {
+    font-size: 12px;
+    font-style: italic;
+    color: #C3057F;
+    margin-top: 0;
+}
+
+.pergunta {
+    margin-bottom: 5px; /* Reduz o espaço entre as duas frases */
+    font-weight: bold; /* Deixa a frase em negrito */
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .carrossel-container {
+        flex-direction: column;
+    }
+
+    .carrossel-container img {
+        height: auto;
+        width: 90%;
+        max-height: 300px;
+    }
+
+    .carrossel-container button {
+        margin: 10px 0;
+        padding: 8px 16px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .mensagem-extra, .historia {
+        font-size: 16px;
+    }
+
+    .contador-texto, .contador-legenda, #contador {
+        font-size: 14px;
+    }
+
+    hr, .linha-secundaria {
+        width: 70%;
+    }
+
+    #playMusic {
+        top: 5px;
+        right: 5px;
+        font-size: 12px;
+        padding: 4px 8px;
+    }
+
+    .formulario-container {
+        padding: 10px;
+    }
+
+    .formulario-container button {
+        font-size: 14px;
+    }
+}

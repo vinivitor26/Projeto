@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tralarelo Tralala 🦈👟</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1> 📞💖 Aaaaaalô, é aqui que falo com a minha gatinha? 😽💕 </h1>
+        <p>Esta página foi feita única e exclusivamente para a mulher da minha vida!</p>
+        <p>Primeiramente quero registrar alguns momentos nossos 👇🏽 </p>
+
+        <!-- Carrossel de Fotos -->
+        <div class="carrossel-container">
+            <button id="anterior">&#10094;</button>
+            <img id="imagemAtual" src="imagens/foto_1.jpg" alt="Foto 1">
+            <button id="proximo">&#10095;</button>
+        </div>
+        <p id="legenda" class="legenda"></p>
+
+        <!-- Linha divisória -->
+        <hr>
+
+        <!-- Contador de tempo -->
+        <div id="contador-container">
+            <p class="contador-texto">Meu bem, já estamos juntos há:</p>
+            <p id="contador"><span id="tempoJuntos"></span>📆</p>
+            <p class="contador-legenda">*Sim, esse tempo considera a parte 1 e parte 2 rs</p>
+        </div>
+
+        <!-- Nova Linha divisória -->
+        <hr class="linha-secundaria">
+
+        <p class="mensagem-extra">Você deve estar se perguntando, o que o Vi está fazendo?🤔💭</p>
+        <p class="historia"> Essa é uma longa história... mas antes de te contar ela, quero te fazer um convite! 📖</p>
+
+        <!-- Áudio de fundo -->
+        <audio id="backgroundMusic" loop>
+            <source src="partilhar.mp3" type="audio/mpeg">
+            Seu navegador não suporta áudio HTML5.
+        </audio>
+
+        <!-- Botão para tocar a música se o autoplay for bloqueado -->
+        <button id="playMusic" style="display: none;">Clique para tocar a música 🎶</button>
+    </div>
+
+    <script src="script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var audio = document.getElementById("backgroundMusic");
+            var playButton = document.getElementById("playMusic");
+
+            // Tenta tocar automaticamente
+            var playPromise = audio.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.then(() => {
+                    // Reprodução automática permitida
+                    playButton.style.display = "none";
+                }).catch(() => {
+                    // Autoplay bloqueado, exibe o botão
+                    playButton.style.display = "block";
+                });
+            }
+
+            // Se o usuário clicar no botão, a música começa
+            playButton.addEventListener("click", function () {
+                audio.play();
+                playButton.style.display = "none"; // Esconde o botão após tocar
+            });
+
+            
+        });
+    </script>
+
+</body>
+</html>
+<!-- Formulário -->
+<div class="formulario-container">
+    <p class="pergunta">Eai amô, você aceita esse convite? 📩</p>
+    <p class="convite-observacao">Nem vem que o convite é surpresa, datas e horários não serão revelados</p>
+    <form id="formResposta">
+        <label>
+            <input type="radio" name="resposta" value="sim"> Sim 😍
+        </label>
+        <label>
+            <input type="radio" name="resposta" value="nao"> Não 😭
+        </label>
+        <br>
+        <button type="submit">Enviar 💌</button>
+    </form>
+    <p id="respostaFinal"></p>
+</div>
+
+<script>
+    document.getElementById("formResposta").addEventListener("submit", function(event) {
+        event.preventDefault(); // Evita o recarregamento da página
+
+        let resposta = document.querySelector('input[name="resposta"]:checked');
+
+        if (resposta) {
+            if (resposta.value === "sim") {
+                document.getElementById("respostaFinal").innerHTML = "🥰 Eu sabia! Te amo, minha princesa! 💖";
+            } else {
+                document.getElementById("respostaFinal").innerHTML = "😭 Ah não, por que faz isso comigo? Brincadeira! Eu te amo de qualquer jeito! ❤️";
+            }
+        } else {
+            document.getElementById("respostaFinal").innerHTML = "Por favor, escolha uma opção! 🙏";
+        }
+    });
+</script>
